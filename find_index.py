@@ -11,7 +11,7 @@ def index_all(list_to_search, value_to_search):
 
 def get_index(list_to_search, value_to_search, indices_found, result_set):
     for index, item in enumerate(list_to_search, start=0):
-        copy_of_result_set = list(result_set)
+        copy_of_result_set = result_set.copy()
         if isinstance(item, list):
             copy_of_result_set.append(index)
             get_index(item, value_to_search, indices_found, copy_of_result_set)
